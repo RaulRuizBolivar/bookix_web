@@ -1,15 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
-@Component({
+@Component( {
   selector: 'app-comment-historial',
   templateUrl: './comment-historial.component.html',
-  styleUrls: ['./comment-historial.component.css']
-})
+  styleUrls: [ './comment-historial.component.css' ]
+} )
 export class CommentHistorialComponent implements OnInit {
+  @Input() comment: any
+  constructor () { }
 
-  constructor() { }
-
-  ngOnInit(): void {
+  ngOnInit (): void {
   }
 
 }

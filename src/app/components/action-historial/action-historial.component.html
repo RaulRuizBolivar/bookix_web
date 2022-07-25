@@ -1,1 +1,25 @@
-<p>action-historial works!</p>
+<div class="row mb-3">
+	<div class="col-5 bg-dark rounded py-3">
+		<div class="row">
+			<div class="col-4 d-fex align-items-center">
+				<img [src]="action.image" [alt]="action.username" class=" mt-4 img-fluid rounded-circle">
+			</div>
+			<div class="col-8 mt-4 ps-5">
+				<h2>{{action.username}}</h2>
+				<h3>{{action.name}}</h3>
+			</div>
+		</div>
+	</div>
+	<div class="col-2 d-flex align-items-center justify-content-center">
+		<p class="text-center" [innerText]="(action.action ==='vote')?'Votó':'Leyó'"></p>
+	</div>
+	<div class="col-5 bg-dark rounded p-3">
+		<div class="row">
+			<img [src]="action.front_page" [alt]="action.username" class="img-fluid rounded col-4">
+			<div class="col-8">
+				<h2>{{action.tittle}}</h2>
+				<p>{{action.date | date}}</p>
+			</div>
+		</div>
+	</div>
+</div>

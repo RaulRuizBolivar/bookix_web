@@ -1,1 +1,8 @@
-<p>historial works!</p>
+<div *ngFor="let action of historial">
+	<article *ngIf="action.action !== 'comment'">
+		<app-action-historial [action]=action></app-action-historial>
+	</article>
+	<article *ngIf="action.action === 'comment'">
+		<app-comment-historial [comment]=action></app-comment-historial>
+	</article>
+</div>
