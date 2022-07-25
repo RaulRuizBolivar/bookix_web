@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
     private router: Router
   ) {
     this.login = new FormGroup( {
-      username: new FormControl( '', [
+      email: new FormControl( '', [
         Validators.required
       ] ),
       password: new FormControl( '', [
@@ -28,5 +28,12 @@ export class LoginComponent implements OnInit {
   ngOnInit (): void {
   }
 
-  getDataForm () { }
+  async getDataForm () {
+    const response: any = await this.userService.login( this.login.value )
+    console.log( response )
+    if ( response.token ) {
+      localStorage.setItem( 'user-token', response.token )
+      this.router.navigate( [ '/home' ] )
+    }
+  }
 }
