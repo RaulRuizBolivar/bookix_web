@@ -1,0 +1,11 @@
+*{
+	background-color: #141414;
+	color: white;
+	box-sizing: border-box;
+}
+header{
+	height: 3vh;
+}
+main{
+	min-height: 97vh;
+}
