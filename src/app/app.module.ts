@@ -9,6 +9,10 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './components/home/home.component';
+import { PerfilComponent } from './components/perfil/perfil.component';
+import { ActionHistorialComponent } from './components/action-historial/action-historial.component';
+import { CommentHistorialComponent } from './components/comment-historial/comment-historial.component';
+import { HistorialComponent } from './components/historial/historial.component';
 
 @NgModule( {
   declarations: [
@@ -16,7 +20,11 @@ import { HomeComponent } from './components/home/home.component';
     HeaderComponent,
     LoginComponent,
     RegisterComponent,
-    HomeComponent
+    HomeComponent,
+    PerfilComponent,
+    ActionHistorialComponent,
+    CommentHistorialComponent,
+    HistorialComponent
   ],
   imports: [
     BrowserModule,
