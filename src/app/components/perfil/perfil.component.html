@@ -1,25 +1,28 @@
 <div class="row">
-	<aside class="col-12 col-lg-4 p-3">
+	<aside class="col-12 col-md-12 col-lg-4 p-3">
 		<article class="row py-5 px-3 mb-3 shadow">
-			<img class="col-5 img-fluid rounded-circle shadow" src="https://randomuser.me/api/portraits/men/79.jpg"
-				alt="">
+			<img class="col-5 img-fluid rounded-circle shadow" [src]="user.image" [alt]="user.username">
 			<div class="col-7">
-				<h1 class="h2 pb-5">username</h1>
-				<h3 class="h2">email</h3>
+				<h1 class="h3 pb-5">{{user.username}}</h1>
+				<p>{{user.email}}</p>
 			</div>
 			<button class="mt-5 btn btn-warning">Editar usuario</button>
 		</article>
-		<article class="row py-5 px-3 mb-3 shadow">
-			<h3 class="text-center">Tus clubs de lectura</h3>
+		<h3 class="text-center py-3 px-3 mb-3">Tus clubs de lectura</h3>
+		<article *ngFor="let bookClub of bookClubAdmin" class="row pt-3 pb-5 px-3 mb-3 shadow club">
+			<h5 class="mt-2 text-center">{{bookClub.name}}</h5>
+			<img [src]="bookClub.image" [alt]="bookClub.name">
 		</article>
-		<article class="row py-5 px-3 mb-3 shadow">
-			<h3 class="text-center">Tus suscripciones</h3>
+		<h3 class="text-center py-3 px-3 mb-3">Tus suscripciones</h3>
+		<article *ngFor="let sub of subscriptions" class="row pt-3 pb-5 px-3 mb-3 shadow club">
+			<h5 class="mt-2 text-center">{{sub.name}}</h5>
+			<img [src]="sub.image" [alt]="sub.name">
 		</article>
 	</aside>
-	<section class="col-12 col-lg-8 px-4">
+	<section class="col-12 col-md-12 col-lg-8 px-4">
 		<h2 class="text-center my-3">Historial de usuario</h2>
 		<article class="row py-5 px-3 mb-3 shadow">
-			<app-historial></app-historial>
+			<app-historial [historial]="historial"></app-historial>
 		</article>
 	</section>
 </div>

@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { UserService } from 'src/app/services/user.service';
 
 @Component( {
@@ -8,8 +8,7 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: [ './historial.component.css' ]
 } )
 export class HistorialComponent implements OnInit {
-  historial: any
-  token: string = ''
+  @Input() historial: any
   constructor (
     private httpClient: HttpClient,
     private userService: UserService
@@ -17,9 +16,6 @@ export class HistorialComponent implements OnInit {
 
   }
 
-  async ngOnInit () {
-    this.historial = await this.userService.getHistorial()
-    console.log( this.historial )
-  }
+  async ngOnInit () { }
 
 }
