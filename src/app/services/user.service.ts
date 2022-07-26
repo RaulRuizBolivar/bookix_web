@@ -7,7 +7,11 @@ import { lastValueFrom } from 'rxjs';
 } )
 export class UserService {
   baseUrl: string = 'http://localhost:3000/api/users/'
-
+  httpOptions: any = {
+    headers: new HttpHeaders( {
+      'Authorization': localStorage.getItem( 'user-token' ) || ''
+    } )
+  }
   constructor (
     private httpClient: HttpClient
   ) { }
@@ -16,13 +20,19 @@ export class UserService {
   }
 
   getHistorial (): Promise<any> {
-    let token = localStorage.getItem( 'user-token' )
-    const httpOptions: any = {
-      headers: new HttpHeaders( {
-        'Authorization': token || ''
-      } )
-    }
-    return lastValueFrom( this.httpClient.get<any>( this.baseUrl + 'historial', httpOptions ) )
+    return lastValueFrom( this.httpClient.get<any>( this.baseUrl + 'historial', this.httpOptions ) )
+  }
+
+  getUser (): Promise<any> {
+    return lastValueFrom( this.httpClient.get<any>( this.baseUrl, this.httpOptions ) )
+  }
+
+  getBookClubAdmin (): Promise<any> {
+    return lastValueFrom( this.httpClient.get<any>( this.baseUrl + 'book_club', this.httpOptions ) )
+  }
+
+  getSubscriptions (): Promise<any> {
+    return lastValueFrom( this.httpClient.get<any>( this.baseUrl + 'subscriptions', this.httpOptions ) )
   }
 
 }
