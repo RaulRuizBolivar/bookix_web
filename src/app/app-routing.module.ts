@@ -9,7 +9,7 @@ const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/home' },
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent, canActivate: [ LoginGuard ] },
-  { path: 'perfil/:user_id', component: PerfilComponent, canActivate: [ LoginGuard ] },
+  { path: 'perfil', component: PerfilComponent, canActivate: [ LoginGuard ] },
   { path: '**', pathMatch: 'full', redirectTo: '/home' }
 ];
 
