@@ -1,10 +1,12 @@
 <div class="row">
 	<aside class="col-12 col-md-12 col-lg-4 p-3">
 		<article class="row py-5 px-3 mb-3 shadow">
-			<img class="col-5 img-fluid rounded-circle shadow" [src]="user.image" [alt]="user.username">
-			<div class="col-7">
-				<h1 class="h3 pb-5">{{user.username}}</h1>
-				<p>{{user.email}}</p>
+			<div class="col-12 col-md-8 col-lg-5 ">
+				<img class="img-fluid rounded-circle shadow" [src]="user.image" [alt]="user.username">
+			</div>
+			<div class="col-12 col-md-4 col-lg-7">
+				<h1 class="h3 mt-md-5 mt-lg-0 pb-5 text-center text-md-start">{{user.username}}</h1>
+				<p class="text-center text-md-start">{{user.email}}</p>
 			</div>
 			<button class="mt-5 btn btn-warning">Editar usuario</button>
 		</article>
