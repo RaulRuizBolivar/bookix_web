@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ClubService } from 'src/app/services/club.service';
 import { UserService } from 'src/app/services/user.service';
 
@@ -14,12 +15,18 @@ export class ClubComponent implements OnInit {
   subs: any
   user: any
   isSub: boolean = false
+  comment: FormGroup
   constructor (
     private activatedRoute: ActivatedRoute,
     private clubService: ClubService,
-    private userService: UserService
+    private userService: UserService,
+    private router: Router
   ) {
-
+    this.comment = new FormGroup( {
+      comment: new FormControl( '', [
+        Validators.required
+      ] )
+    }, [] )
   }
 
   ngOnInit (): void {
@@ -38,11 +45,19 @@ export class ClubComponent implements OnInit {
     } )
   }
 
-  subscribe () {
-    this.userService.subscribe( this.bookClub.id )
-  }
-  unsubscribe () {
-    this.userService.unsubscribe( this.bookClub.id )
+  subscribe ( state: boolean ) {
+    if ( state ) {
+      this.userService.subscribe( this.bookClub.id )
+    } else {
+      this.userService.unsubscribe( this.bookClub.id )
+    }
+    this.router.navigate( [ '/home' ] )
   }
 
+  async getDataComment () {
+    const response: any = await this.userService.comment( this.user.id, this.bookClub.book_id, this.bookClub.id, this.comment.value )
+    this.router.navigate( [ '/perfil' ] )
+  }
 }
+
+

@@ -27,3 +27,7 @@ h1{
 h1{
 	font-size: 500%;
 }
+textarea{
+	min-height: 100px;
+	max-height: 500px;
+}

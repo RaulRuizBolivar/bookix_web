@@ -43,4 +43,8 @@ export class UserService {
     return lastValueFrom( this.httpClient.delete<any>( this.baseUrl + 'subscribe/' + book_club_id, this.httpOptions ) )
   }
 
+  comment ( user_id: any, book_id: number, book_club_id: number, form: any ) {
+    return lastValueFrom( this.httpClient.post<any>( this.baseUrl + 'comment/user/' + user_id + '/book/' + book_id + '/book_club/' + book_club_id, form ) )
+  }
+
 }
