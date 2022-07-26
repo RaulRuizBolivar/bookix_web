@@ -1,10 +1,10 @@
 <div class="bg-dark p-3 rounded mb-3">
 	<div class="row d-flex align-items-center justify-content-center">
 		<img class="col-1 img-fluid rounded-circle" [src]="comment.image" [alt]="comment.username">
-		<h6 class="col-11"><b>{{comment.username}}</b> en {{comment.tittle}}</h6>
+		<h6 class="col-11"><b>{{comment.username}}</b> en {{comment.title}}</h6>
 	</div>
 	<div class="row d-flex align-items-center justify-content-center px-3">
 		<p class="mt-4 py-3 rounded shadow comentario">{{comment.comment}}</p>
 	</div>
-	<p class="text-end">{{comment.date | date}}</p>
+	<p class="text-end">{{comment.date | date:'HH:mm d-M-yyyy'}}</p>
 </div>

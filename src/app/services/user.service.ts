@@ -35,4 +35,12 @@ export class UserService {
     return lastValueFrom( this.httpClient.get<any>( this.baseUrl + 'subscriptions', this.httpOptions ) )
   }
 
+  subscribe ( book_club_id: number ): Promise<any> {
+    return lastValueFrom( this.httpClient.post<any>( this.baseUrl + 'subscribe/' + book_club_id, this.httpOptions ) )
+  }
+
+  unsubscribe ( book_club_id: number ): Promise<any> {
+    return lastValueFrom( this.httpClient.delete<any>( this.baseUrl + 'subscribe/' + book_club_id, this.httpOptions ) )
+  }
+
 }

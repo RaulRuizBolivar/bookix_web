@@ -1,32 +1,36 @@
-<div class="row">
-	<aside class="col-12 col-md-12 col-lg-4 p-3">
-		<article class="row py-5 px-3 mb-3 shadow">
-			<div class="col-12 col-md-8 col-lg-5 ">
-				<img class="img-fluid rounded-circle shadow" [src]="user.image" [alt]="user.username">
-			</div>
-			<div class="col-12 col-md-4 col-lg-7">
-				<h1 class="h3 mt-md-5 mt-lg-0 pb-5 text-center text-md-start">{{user.username}}</h1>
-				<p class="text-center text-md-start">{{user.email}}</p>
-			</div>
-			<button class="mt-5 btn btn-warning">Editar usuario</button>
-		</article>
-		<h3 class="text-center py-3 px-3 mb-3">Tus clubs de lectura</h3>
-		<article *ngFor="let bookClub of bookClubAdmin" class="row pt-3 pb-5 px-3 mb-3 shadow club">
-			<h5 class="mt-2 text-center">{{bookClub.name}}</h5>
-			<img [src]="bookClub.image" [alt]="bookClub.name">
-		</article>
-		<h3 class="text-center py-3 px-3 mb-3">Tus suscripciones</h3>
-		<article *ngFor="let sub of subscriptions" class="pt-3 pb-5 px-3 mb-3 shadow club">
-			<div [routerLink]="['club_lectura/' + sub.book_club_id]">
-				<h5 class="mt-2 text-center">{{sub.name}}</h5>
-				<img class="img-fluid" [src]="sub.image" [alt]="sub.name">
-			</div>
-		</article>
-	</aside>
-	<section class="col-12 col-md-12 col-lg-8 px-4">
-		<h2 class="text-center my-3">Historial de usuario</h2>
-		<article class="row py-5 mb-3 historial">
-			<app-historial [historial]="historial"></app-historial>
-		</article>
-	</section>
+<div class="container">
+	<div class="row">
+		<aside class="col-12 col-md-12 col-lg-4 p-3">
+			<article class="row py-5 px-3 mb-3 shadow">
+				<div class="col-12 col-md-8 col-lg-5 ">
+					<img class="img-fluid rounded-circle shadow" [src]="user.image" [alt]="user.username">
+				</div>
+				<div class="col-12 col-md-4 col-lg-7">
+					<h1 class="h3 mt-md-5 mt-lg-0 pb-5 text-center text-md-start">{{user.username}}</h1>
+					<p class="text-center text-md-start">{{user.email}}</p>
+				</div>
+				<button class="mt-5 btn btn-warning">Editar usuario</button>
+			</article>
+			<h3 class="text-center py-3 px-3 mb-3">Tus clubs de lectura</h3>
+			<article *ngFor="let bookClub of bookClubAdmin" class="row pt-3 pb-5 px-3 mb-3 shadow club">
+				<div [routerLink]="['/club_lectura/' + bookClub.id]">
+					<h5 class="mt-2 text-center">{{bookClub.name}}</h5>
+					<img class="img-fluid" [src]="bookClub.image" [alt]="bookClub.name">
+				</div>
+			</article>
+			<h3 class="text-center py-3 px-3 mb-3">Tus suscripciones</h3>
+			<article *ngFor="let sub of subscriptions" class="pt-3 pb-5 px-3 mb-3 shadow club">
+				<div [routerLink]="['/club_lectura/' + sub.book_club_id]">
+					<h5 class="mt-2 text-center">{{sub.name}}</h5>
+					<img class="img-fluid" [src]="sub.image" [alt]="sub.name">
+				</div>
+			</article>
+		</aside>
+		<section class="col-12 col-md-12 col-lg-8 px-4">
+			<h2 class="text-center my-3">Historial de usuario</h2>
+			<article class="row py-5 mb-3 historial">
+				<app-historial [historial]="historial"></app-historial>
+			</article>
+		</section>
+	</div>
 </div>

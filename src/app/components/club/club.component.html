@@ -1,0 +1,34 @@
+<div class="hero">
+	<img [src]="bookClub.image" alt="">
+	<h1>
+		{{bookClub.name}}
+	</h1>
+	<div class="gradient"></div>
+</div>
+<div class="container pb-5">
+	<button *ngIf="!isSub" class="btn btn-warning w-100 my-3" (click)="subscribe()">Suscribirse</button>
+	<section class="row py-3">
+		<article class="col">
+			<h3 class="text-center">Propietario:</h3>
+			<h5 class="text-center">{{bookClub.user}}</h5>
+		</article>
+		<article class="col">
+			<h3 class="text-center">Género:</h3>
+			<h5 class="text-center">{{bookClub.genre}}</h5>
+		</article>
+		<article class="col">
+			<h3 class="text-center">Estado:</h3>
+			<h5 class="text-center">{{(bookClub.phase === 'read')? 'Leyendo '+ bookClub.num_pages + ' páginas por
+				semana':(bookClub.phase === 'comment')?
+				'Comentando':'Votando'}}</h5>
+		</article>
+		<article class="col" *ngIf="bookClub.phase !== 'vote'">
+			<h3 class="text-center">Libro actual:</h3>
+			<h5 class="text-center">{{bookClub.book}}</h5>
+		</article>
+	</section>
+	<section class="historial">
+		<app-historial [historial]="historial"></app-historial>
+	</section>
+	<button *ngIf="isSub" class="btn btn-danger w-100 my-3" (click)="unsubscribe()">Quitar suscripción</button>
+</div>

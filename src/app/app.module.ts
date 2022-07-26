@@ -13,6 +13,8 @@ import { PerfilComponent } from './components/perfil/perfil.component';
 import { ActionHistorialComponent } from './components/action-historial/action-historial.component';
 import { CommentHistorialComponent } from './components/comment-historial/comment-historial.component';
 import { HistorialComponent } from './components/historial/historial.component';
+import { ClubComponent } from './components/club/club.component';
+import { RecortarStringPipe } from './pipes/recortar-string.pipe';
 
 @NgModule( {
   declarations: [
@@ -24,7 +26,9 @@ import { HistorialComponent } from './components/historial/historial.component';
     PerfilComponent,
     ActionHistorialComponent,
     CommentHistorialComponent,
-    HistorialComponent
+    HistorialComponent,
+    ClubComponent,
+    RecortarStringPipe
   ],
   imports: [
     BrowserModule,

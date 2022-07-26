@@ -1,21 +1,26 @@
 <div class="row">
-	<div class="col-2  py-3">
+	<div class="col-3 px-5 py-3">
 		<div class="row">
 			<img [src]="action.image" [alt]="action.username" class=" mt-4 img-fluid rounded-circle">
 			<h5 class="text-center mt-3">{{action.username}}</h5>
 			<p class="text-center mt-3">{{action.name}}</p>
 		</div>
 	</div>
-	<div class="col-2 d-flex align-items-center justify-content-center">
+	<div class="col-1 d-flex align-items-center justify-content-center">
 		<p class="text-center" [innerText]="(action.action ==='vote')?'Votó':'Leyó'"></p>
 	</div>
-	<div class="col-8 bg-dark rounded p-3">
+	<div class="col-8 bg-dark rounded p-3 ps-5">
 		<div class="row">
-			<img [src]="action.front_page" [alt]="action.username" class="img-fluid rounded col-4">
+			<div class="col-4">
+				<img [src]="action.front_page" [alt]="action.username" class="rounded ">
+			</div>
 			<div class="col-8">
-				<h2>{{action.tittle}}</h2>
-				<p>{{action.date | date}}</p>
+				<h2>{{action.title}}</h2>
+				<p>{{action.author}}</p>
+				<p>{{action.num_pages}}</p>
+				<p>{{action.synopsis | recortarString: 30:'...'}}</p>
 			</div>
 		</div>
 	</div>
+	<p class="text-end">{{action.date | date:'HH:mm d-M-yyyy'}}</p>
 </div>

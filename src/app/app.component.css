@@ -4,8 +4,8 @@
 	box-sizing: border-box;
 }
 header{
-	height: 3vh;
+	background-color: #141414;
 }
 main{
-	min-height: 97vh;
+	min-height: 95.28vh;
 }

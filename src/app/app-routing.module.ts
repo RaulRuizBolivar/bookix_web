@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ClubComponent } from './components/club/club.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { PerfilComponent } from './components/perfil/perfil.component';
@@ -10,6 +11,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent, canActivate: [ LoginGuard ] },
   { path: 'perfil', component: PerfilComponent, canActivate: [ LoginGuard ] },
+  { path: 'club_lectura/:club_id', component: ClubComponent, canActivate: [ LoginGuard ] },
   { path: '**', pathMatch: 'full', redirectTo: '/home' }
 ];
 
