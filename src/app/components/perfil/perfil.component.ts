@@ -21,8 +21,6 @@ export class PerfilComponent implements OnInit {
     this.historial = await this.userService.getHistorial()
     this.bookClubAdmin = await this.userService.getBookClubAdmin()
     this.subscriptions = await this.userService.getSubscriptions()
-    console.log( this.bookClubAdmin )
-    console.log( this.subscriptions )
   }
 
 }

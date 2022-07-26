@@ -1,5 +1,9 @@
 <nav class="navbar navbar-expand-lg container d-flex justify-content-around px-3">
-	<a class="navbar-brand text-white">Navbar</a>
+	<a class="navbar-brand text-white" [routerLink]="['/home']">
+		<div id="logo">
+			<img class="img-fluid" src="./assets/logo_transparent.png" alt="">
+		</div>
+	</a>
 	<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
 		aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon"></span>
@@ -7,13 +11,11 @@
 	<div class="collapse navbar-collapse" id="navbarNavDropdown">
 		<ul class="navbar-nav ms-auto">
 			<li class="nav-item">
-				<a class="nav-link active text-white" aria-current="page">Home</a>
+				<a class="nav-link text-white" aria-current="page" [routerLink]="['/biblioteca']">Biblioteca</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link text-white" aria-current="page">Home</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link text-white" aria-current="page">Home</a>
+				<a class="nav-link active text-white" aria-current="page" [routerLink]="['/perfil']">Perfil de
+					usuario</a>
 			</li>
 		</ul>
 	</div>
