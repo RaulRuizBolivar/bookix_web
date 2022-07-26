@@ -30,7 +30,7 @@ export class ClubComponent implements OnInit {
   }
 
   ngOnInit (): void {
-    this.bookClub = this.activatedRoute.params.subscribe( async params => {
+    this.activatedRoute.params.subscribe( async params => {
       let id = parseInt( params[ 'club_id' ] )
       this.bookClub = await this.clubService.getOne( id )
       this.historial = await this.clubService.getHistorial( id )

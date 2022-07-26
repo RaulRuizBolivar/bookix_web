@@ -18,10 +18,6 @@ export class PerfilComponent implements OnInit {
     private router: Router
   ) {
     this.cargarDatos()
-    // this.userService.getUser().then( user => this.user = user )
-    // this.userService.getHistorial().then( historial => this.historial = historial )
-    // this.userService.getBookClubAdmin().then( bookClubAdmin => this.bookClubAdmin = bookClubAdmin )
-    // this.userService.getSubscriptions().then( subscriptions => this.subscriptions = subscriptions )
   }
 
   ngOnInit () { }
