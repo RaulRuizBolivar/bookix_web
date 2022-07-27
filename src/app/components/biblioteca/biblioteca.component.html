@@ -1,16 +1,19 @@
+<h1 class="text-center py-3">Explora los libros disponibles por categoría</h1>
 <div class="container pb-3">
 	<section *ngFor="let genre of arrBooks" class="w-100 p-3  mb-3">
+		<hr>
 		<h2>{{genre.genre}}</h2>
 		<div class="wrapper row">
 			<article *ngFor="let book of genre.books" class="col-6 col-md-4 col-lg-3">
-				<div type="button" class="row p-3" [routerLink]="['/libro/' + book.id]">
-					<figure class="col p-3 rounded">
+				<div class="row p-3">
+					<figure class="col p-3 rounded" type="button" [routerLink]="['/libro/' + book.id]">
 						<figcaption class="text-center h5">{{book.title}}</figcaption>
+						<figcaption class="text-center mb-2">{{book.author}}</figcaption>
 						<img [src]="book.front_page" [alt]="book.title" class="rounded img-fluid">
 					</figure>
 				</div>
 			</article>
 		</div>
-		<hr>
+
 	</section>
 </div>

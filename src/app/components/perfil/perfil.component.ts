@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
@@ -20,7 +19,8 @@ export class PerfilComponent implements OnInit {
     this.cargarDatos()
   }
 
-  ngOnInit () { }
+  ngOnInit () {
+  }
   async cargarDatos () {
     this.user = await this.userService.getUser()
     this.historial = await this.userService.getHistorial()
