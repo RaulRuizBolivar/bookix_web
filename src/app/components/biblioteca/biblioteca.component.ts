@@ -11,7 +11,6 @@ import SwiperCore, { Pagination, Navigation } from "swiper";
 } )
 export class BibliotecaComponent implements OnInit {
   arrBooks: any
-  swiper: any
   constructor (
     private bookService: BookService
   ) {

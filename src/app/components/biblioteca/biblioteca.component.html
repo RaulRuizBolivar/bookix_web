@@ -9,7 +9,7 @@
 					<figure class="col p-3 rounded" type="button" [routerLink]="['/libro/' + book.id]">
 						<figcaption class="text-center h5">{{book.title}}</figcaption>
 						<figcaption class="text-center mb-2">{{book.author}}</figcaption>
-						<img [src]="book.front_page" [alt]="book.title" class="rounded img-fluid">
+						<img [src]="book?.front_page" [alt]="book?.title" class="rounded img-fluid">
 					</figure>
 				</div>
 			</article>
