@@ -30,4 +30,8 @@ export class ClubService {
   async getAllGenre () {
     return lastValueFrom( this.httpClient.get<any>( this.baseUrl + 'genre', this.httpOptions ) )
   }
+
+  async create ( form: any ) {
+    return lastValueFrom( this.httpClient.post<any>( this.baseUrl, form, this.httpOptions ) )
+  }
 }
