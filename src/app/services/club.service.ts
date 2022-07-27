@@ -26,4 +26,8 @@ export class ClubService {
   async getSubs ( id: number ) {
     return lastValueFrom( this.httpClient.get<any>( this.baseUrl + 'subscribers/' + id, this.httpOptions ) )
   }
+
+  async getAllGenre () {
+    return lastValueFrom( this.httpClient.get<any>( this.baseUrl + 'genre', this.httpOptions ) )
+  }
 }
