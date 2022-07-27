@@ -6,15 +6,22 @@ import { lastValueFrom } from 'rxjs';
   providedIn: 'root'
 } )
 export class UserService {
-  baseUrl: string = 'http://localhost:3000/api/users/'
-  httpOptions: any = {
-    headers: new HttpHeaders( {
-      'Authorization': localStorage.getItem( 'user-token' ) || ''
-    } )
-  }
+
+
+  baseUrl: string
+  httpOptions: any
+
+
   constructor (
     private httpClient: HttpClient
-  ) { }
+  ) {
+    this.baseUrl = 'http://localhost:3000/api/users/'
+    this.httpOptions = {
+      headers: new HttpHeaders( {
+        'Authorization': localStorage.getItem( 'user-token' ) || ''
+      } )
+    }
+  }
   login ( form: any ): Promise<any> {
     return lastValueFrom( this.httpClient.post<any>( this.baseUrl + 'login', form ) )
   }
@@ -39,11 +46,14 @@ export class UserService {
     return lastValueFrom( this.httpClient.get<any>( this.baseUrl + 'subscriptions', this.httpOptions ) )
   }
 
+
   subscribe ( book_club_id: number ): Promise<any> {
-    return lastValueFrom( this.httpClient.post<any>( this.baseUrl + 'subscribe/' + book_club_id, this.httpOptions ) )
+
+    return lastValueFrom( this.httpClient.post<any>( this.baseUrl + 'subscribe/' + book_club_id, null, this.httpOptions ) )
   }
 
   unsubscribe ( book_club_id: number ): Promise<any> {
+
     return lastValueFrom( this.httpClient.delete<any>( this.baseUrl + 'subscribe/' + book_club_id, this.httpOptions ) )
   }
 

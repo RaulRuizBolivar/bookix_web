@@ -36,26 +36,29 @@ export class ClubComponent implements OnInit {
       this.historial = await this.clubService.getHistorial( id )
       this.subs = await this.clubService.getSubs( id )
       this.user = await this.userService.getUser()
-      console.log( this.user )
       for ( let sub of this.subs ) {
-        console.log( sub )
         if ( sub.id === this.user.id ) this.isSub = true; break
       }
-      console.log( this.isSub )
     } )
   }
 
-  subscribe ( state: boolean ) {
-    if ( state ) {
-      this.userService.subscribe( this.bookClub.id )
-    } else {
-      this.userService.unsubscribe( this.bookClub.id )
+  async subscribe ( state: boolean ) {
+    let response
+    try {
+      if ( state ) {
+        response = await this.userService.subscribe( this.bookClub.id )
+      } else {
+        response = await this.userService.unsubscribe( this.bookClub.id )
+      }
+    } catch ( err ) {
+      console.log( 'Error: ' + err )
     }
-    this.router.navigate( [ '/home' ] )
+    console.log( response )
+    if ( response.success ) this.router.navigate( [ '/home' ] )
   }
 
   async getDataComment () {
-    const response: any = await this.userService.comment( this.user.id, this.bookClub.book_id, this.bookClub.id, this.comment.value )
+    await this.userService.comment( this.user.id, this.bookClub.book_id, this.bookClub.id, this.comment.value )
     this.router.navigate( [ '/perfil' ] )
   }
 }
