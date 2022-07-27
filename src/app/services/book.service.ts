@@ -19,4 +19,7 @@ export class BookService {
   getOne ( book_id: number ) {
     return lastValueFrom( this.httpClient.get<any>( this.baseUrl + book_id, this.httpOptions ) )
   }
+  getAllByGenre () {
+    return lastValueFrom( this.httpClient.get<any>( this.baseUrl + 'genre/', this.httpOptions ) )
+  }
 }
