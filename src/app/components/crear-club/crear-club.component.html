@@ -1,0 +1,21 @@
+<div class="in">
+	<div class="card w-50 mx-auto border-0 shadow">
+		<div class="card-body p-5">
+			<h2 class="text-center mb-4">Tu nuevo club de lectura</h2>
+			<form novalidate [formGroup]="crearClub" (ngSubmit)="getDataForm()">
+				<div>
+					<label class="form-label" for="email">Email</label>
+					<input class="form-control" type="mail" placeholder="Correo electrónico" formControlName="email">
+				</div>
+				<div class="my-4">
+					<label class="form-label" for="password">Contraseña</label>
+					<input class="form-control" type="password" placeholder="Contraseña" formControlName="password">
+				</div>
+				<p [routerLink]="['/register']" type="button" class="text-danger text-center">¿No tienes cuenta?
+					Registrate
+				</p>
+				<input type="submit" class=" btn btn-lg btn-warning w-100 mt-4" type="submit" value="Iniciar sesión">
+			</form>
+		</div>
+	</div>
+</div>
