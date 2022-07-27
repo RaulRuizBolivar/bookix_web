@@ -22,4 +22,7 @@ export class BookService {
   getAllByGenre () {
     return lastValueFrom( this.httpClient.get<any>( this.baseUrl + 'genre/', this.httpOptions ) )
   }
+  getByGenre ( id: number ) {
+    return lastValueFrom( this.httpClient.get<any>( this.baseUrl + 'genre/' + id, this.httpOptions ) )
+  }
 }
