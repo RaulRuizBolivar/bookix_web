@@ -11,19 +11,19 @@
 				</div>
 				<button class="mt-5 btn btn-warning">Editar usuario</button>
 			</article>
-			<h3 *ngIf="bookClubAdmin.length === 0" class="text-center py-3 px-3 mb-3">¿No tienes club de lectura? Crea
+			<h3 *ngIf="bookClubAdmin?.length === 0" class="text-center py-3 px-3 mb-3">¿No tienes club de lectura? Crea
 				uno</h3>
-			<button *ngIf="bookClubAdmin.length === 0" class="mb-5 btn btn-warning w-100"
+			<button *ngIf="bookClubAdmin?.length === 0" class="mb-5 btn btn-warning w-100"
 				[routerLink]="['/crear_club']">Crear club
 				de lectura</button>
-			<h3 *ngIf="bookClubAdmin.length !== 0" class="text-center py-3 px-3 mb-3">Tu club de lectura</h3>
+			<h3 *ngIf="bookClubAdmin?.length !== 0" class="text-center py-3 px-3 mb-3">Tu club de lectura</h3>
 			<article *ngFor="let bookClub of bookClubAdmin" class="row rounded pt-3 pb-5 px-2 mb-3 shadow club">
 				<div type="button" [routerLink]="['/club_lectura/' + bookClub.id]">
 					<h5 class="mt-2 text-center">{{bookClub?.name}}</h5>
 					<img class="img-fluid" [src]="bookClub?.image" [alt]="bookClub?.name">
 				</div>
 			</article>
-			<h3 *ngIf="bookClubAdmin.length !== 0" class="text-center py-3 px-3 mb-3">Tus suscripciones</h3>
+			<h3 *ngIf="bookClubAdmin?.length !== 0" class="text-center py-3 px-3 mb-3">Tus suscripciones</h3>
 			<article *ngFor="let sub of subscriptions" class="row rounded pt-3 pb-5 px-2 mb-3 shadow club">
 				<div type="button" [routerLink]="['/club_lectura/' + sub?.book_club_id]">
 					<h5 class="mt-2 text-center">{{sub?.name}}</h5>
