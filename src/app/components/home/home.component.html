@@ -5,9 +5,9 @@
 			<hr>
 			<h2>{{genre.genre}}</h2>
 			<div class="wrapper row">
-				<article *ngFor="let book_club of genre.book_club" class="col-6 col-md-4 col-lg-3">
+				<article *ngFor="let book_club of genre.book_club" class="col-6 col-md-4">
 					<div class="row p-3">
-						<figure class="col p-3 rounded" type="button" [routerLink]="['/club_lectura/' + book_club.id]">
+						<figure class="col px-3 rounded" type="button" [routerLink]="['/club_lectura/' + book_club.id]">
 							<figcaption class="text-center h5">{{book_club.name}}</figcaption>
 							<img [src]="book_club?.image" [alt]="book_club?.name" class="rounded img-fluid">
 						</figure>

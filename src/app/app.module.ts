@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,8 +18,8 @@ import { ClubComponent } from './components/club/club.component';
 import { RecortarStringPipe } from './pipes/recortar-string.pipe';
 import { LibroComponent } from './components/libro/libro.component';
 import { BibliotecaComponent } from './components/biblioteca/biblioteca.component';
+import { CrearClubComponent } from './components/crear-club/crear-club.component';
 
-import { CommonModule } from '@angular/common';
 
 @NgModule( {
   declarations: [
@@ -34,7 +35,8 @@ import { CommonModule } from '@angular/common';
     ClubComponent,
     RecortarStringPipe,
     LibroComponent,
-    BibliotecaComponent
+    BibliotecaComponent,
+    CrearClubComponent,
   ],
   imports: [
     BrowserModule,
