@@ -30,10 +30,9 @@ export class LoginComponent implements OnInit {
 
   async getDataForm () {
     const response: any = await this.userService.login( this.login.value )
-    console.log( response )
     if ( response.token ) {
       localStorage.setItem( 'user-token', response.token )
-      this.router.navigate( [ '/home' ] )
+      window.location.href = '/home'
     }
   }
 }

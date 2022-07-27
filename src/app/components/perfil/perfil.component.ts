@@ -15,18 +15,26 @@ export class PerfilComponent implements OnInit {
   constructor (
     private userService: UserService,
     private router: Router
-  ) {
-    this.cargarDatos()
-  }
+  ) { }
 
   ngOnInit () {
+    this.cargarDatos()
   }
-  async cargarDatos () {
-    this.user = await this.userService.getUser()
-    this.historial = await this.userService.getHistorial()
-    this.bookClubAdmin = await this.userService.getBookClubAdmin()
-    this.subscriptions = await this.userService.getSubscriptions()
+  cargarDatos () {
+    this.userService.getUser()
+      .then( response => this.user = response )
+      .catch( err => console.log( err ) )
+    this.userService.getHistorial()
+      .then( response => this.historial = response )
+      .catch( err => console.log( err ) )
+    this.userService.getBookClubAdmin()
+      .then( response => this.bookClubAdmin = response )
+      .catch( err => console.log( err ) )
+    this.userService.getSubscriptions()
+      .then( response => this.subscriptions = response )
+      .catch( err => console.log( err ) )
   }
+
   cerrarSesion () {
     localStorage.removeItem( 'user-token' )
     this.router.navigate( [ '/login' ] )
