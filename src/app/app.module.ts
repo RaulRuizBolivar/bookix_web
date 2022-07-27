@@ -18,6 +18,8 @@ import { RecortarStringPipe } from './pipes/recortar-string.pipe';
 import { LibroComponent } from './components/libro/libro.component';
 import { BibliotecaComponent } from './components/biblioteca/biblioteca.component';
 
+import { CommonModule } from '@angular/common';
+
 @NgModule( {
   declarations: [
     AppComponent,
@@ -39,7 +41,8 @@ import { BibliotecaComponent } from './components/biblioteca/biblioteca.componen
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    CommonModule
   ],
   providers: [],
   bootstrap: [ AppComponent ]

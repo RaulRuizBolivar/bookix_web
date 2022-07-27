@@ -1,15 +1,30 @@
 import { Component, OnInit } from '@angular/core';
+import { BookService } from 'src/app/services/book.service';
 
-@Component({
+import SwiperCore, { Pagination, Navigation } from "swiper";
+
+
+@Component( {
   selector: 'app-biblioteca',
   templateUrl: './biblioteca.component.html',
-  styleUrls: ['./biblioteca.component.css']
-})
+  styleUrls: [ './biblioteca.component.css' ]
+} )
 export class BibliotecaComponent implements OnInit {
+  arrBooks: any
+  swiper: any
+  constructor (
+    private bookService: BookService
+  ) {
+    this.bookService.getAllByGenre().then(
+      result => {
+        this.arrBooks = result
+      }
+    )
 
-  constructor() { }
+  }
 
-  ngOnInit(): void {
+  ngOnInit (): void {
+    SwiperCore.use( [ Pagination, Navigation ] );
   }
 
 }
