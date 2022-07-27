@@ -15,7 +15,6 @@ export class LibroComponent implements OnInit {
   ) {
     this.activatedRoute.params.subscribe( async params => {
       this.libro = await this.bookService.getOne( params[ 'book_id' ] )
-      console.log( this.libro )
     } )
   }
 

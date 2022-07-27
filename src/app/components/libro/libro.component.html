@@ -1,30 +1,30 @@
 <div class="container">
 	<div class="row">
 		<div class="col-12 col-lg-6">
-			<img [src]="libro.front_page" [alt]="libro.title" class="rounded">
+			<img [src]="libro?.front_page" [alt]="libro?.title" class="rounded">
 		</div>
 		<div class="col-12 col-lg-6">
-			<h1 class="mb-3">{{libro.title}}</h1>
+			<h1 class="mb-3">{{libro?.title}}</h1>
 			<div class="row py-3 bg-dark rounded">
 				<div class="col border-end text-center">
 					<h5> Autor : </h5>
-					<p>{{libro.author}}</p>
+					<p>{{libro?.author}}</p>
 				</div>
 				<div class="col border-end text-center">
 					<h5>Páginas: </h5>
-					<p>{{libro.num_pages}}</p>
+					<p>{{libro?.num_pages}}</p>
 				</div>
 				<div class="col text-center">
 					<h5>Género : </h5>
-					<p>{{libro.genre}}</p>
+					<p>{{libro?.genre}}</p>
 				</div>
 			</div>
 			<div class="row py-3">
-				<div class="col">Veces leído : <b>{{libro.times_read}}</b></div>
-				<div class="col">Veces votado: <b>{{libro.times_vote}}</b></div>
+				<div class="col">Veces leído : <b>{{libro?.times_read}}</b></div>
+				<div class="col">Veces votado: <b>{{libro?.times_vote}}</b></div>
 			</div>
 			<h4 class="my-3">Sinopsis:</h4>
-			<p>{{libro.synopsis}}</p>
+			<p>{{libro?.synopsis}}</p>
 		</div>
 	</div>
 </div>
