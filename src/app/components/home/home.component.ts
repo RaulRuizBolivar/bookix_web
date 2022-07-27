@@ -11,7 +11,9 @@ export class HomeComponent implements OnInit {
   constructor (
     private clubService: ClubService
   ) {
-    this.clubService.getAllGenre().then( result => { this.arrBookClub = result; console.log( result ) } )
+    this.clubService.getAllGenre()
+      .then( result => { this.arrBookClub = result } )
+      .catch( err => console.error( err ) )
   }
 
   ngOnInit (): void {
