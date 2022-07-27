@@ -16,6 +16,7 @@ import { HistorialComponent } from './components/historial/historial.component';
 import { ClubComponent } from './components/club/club.component';
 import { RecortarStringPipe } from './pipes/recortar-string.pipe';
 import { LibroComponent } from './components/libro/libro.component';
+import { BibliotecaComponent } from './components/biblioteca/biblioteca.component';
 
 @NgModule( {
   declarations: [
@@ -30,7 +31,8 @@ import { LibroComponent } from './components/libro/libro.component';
     HistorialComponent,
     ClubComponent,
     RecortarStringPipe,
-    LibroComponent
+    LibroComponent,
+    BibliotecaComponent
   ],
   imports: [
     BrowserModule,
