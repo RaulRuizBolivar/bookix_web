@@ -1,0 +1,8 @@
+<div *ngFor="let action of historial">
+	<article *ngIf="action.action !== 'comment'" class="mb-3 bg-dark rounded px-3">
+		<app-action-historial [action]=action></app-action-historial>
+	</article>
+	<article *ngIf="action.action === 'comment'">
+		<app-comment-historial [comment]=action></app-comment-historial>
+	</article>
+</div>

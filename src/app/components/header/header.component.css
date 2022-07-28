@@ -1,0 +1,12 @@
+#logo{
+	width: 70px;
+}
+#logo img{
+	display: block;
+	height: auto;
+	width: 100%;
+}
+.active{
+	font-weight: bold;
+	background-color: #181818;
+}

@@ -1,0 +1,38 @@
+<div class="in">
+	<div class="card w-50 mx-auto border-0 shadow">
+		<div class="card-body p-5">
+			<h2 class="text-center mb-4">Tu nuevo club de lectura</h2>
+			<form novalidate [formGroup]="crearClub" (ngSubmit)="getDataForm()">
+				<div class="mb-3">
+					<label class="form-label" for="name">Nombre del club de lectura</label>
+					<input class="form-control" type="text" placeholder="Nombre" formControlName="name">
+				</div>
+				<div class="mb-3">
+					<label class="form-label" for="image">Imagen</label>
+					<input class="form-control" type="text" placeholder="Url de la imagen" formControlName="image">
+				</div>
+				<div class="mb-3">
+					<label class="form-label" for="num_pages">Número de páginas</label>
+					<input class="form-control" type="number" placeholder="Número de páginas"
+						formControlName="num_pages">
+				</div>
+				<div class="mb-3">
+					<label class="form-label" for="genre_id">Género</label>
+					<select class="form-select" formControlName="genre_id" id="genre_id" (change)="selectBooks($event)">
+						<option value="" selected>Selecciona un genero</option>
+						<option *ngFor="let genre of arrGenres" [value]="genre.id" selected>{{genre.genre}}</option>
+					</select>
+				</div>
+				<div class="mb-3">
+					<label class="form-label" for="book_id">Libro</label>
+					<select class="form-select" formControlName="book_id" id="book_id">
+						<option value="" selected>Selecciona un libro</option>
+						<option *ngFor="let book of arrBooks" [value]="book.id">{{book.title}}</option>
+					</select>
+				</div>
+				<input [disabled]="!crearClub.valid" type="submit" class=" btn btn-lg btn-warning w-100 mt-4"
+					type="submit" value="Crear">
+			</form>
+		</div>
+	</div>
+</div>
