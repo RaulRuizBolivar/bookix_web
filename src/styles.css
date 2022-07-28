@@ -4,3 +4,9 @@ img{
 	width: 100%;
 	height: auto
 }
+.in{
+	padding-top: 30vh;
+}
+.card{
+	background-color: #181818 !important;
+}

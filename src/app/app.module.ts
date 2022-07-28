@@ -19,6 +19,7 @@ import { RecortarStringPipe } from './pipes/recortar-string.pipe';
 import { LibroComponent } from './components/libro/libro.component';
 import { BibliotecaComponent } from './components/biblioteca/biblioteca.component';
 import { CrearClubComponent } from './components/crear-club/crear-club.component';
+import { EditarUsuarioComponent } from './components/editar-usuario/editar-usuario.component';
 
 
 @NgModule( {
@@ -37,6 +38,7 @@ import { CrearClubComponent } from './components/crear-club/crear-club.component
     LibroComponent,
     BibliotecaComponent,
     CrearClubComponent,
+    EditarUsuarioComponent,
   ],
   imports: [
     BrowserModule,

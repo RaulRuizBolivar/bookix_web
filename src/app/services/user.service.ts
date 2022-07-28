@@ -30,6 +30,10 @@ export class UserService {
     return lastValueFrom( this.httpClient.post<any>( this.baseUrl + 'register', form, this.httpOptions ) )
   }
 
+  edit ( form: any ): Promise<any> {
+    return lastValueFrom( this.httpClient.put<any>( this.baseUrl, form, this.httpOptions ) )
+  }
+
   getHistorial (): Promise<any> {
     return lastValueFrom( this.httpClient.get<any>( this.baseUrl + 'historial', this.httpOptions ) )
   }

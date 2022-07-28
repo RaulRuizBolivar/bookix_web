@@ -37,7 +37,7 @@ export class ClubComponent implements OnInit {
       this.subs = await this.clubService.getSubs( id )
       this.user = await this.userService.getUser()
       for ( let sub of this.subs ) {
-        if ( sub.id === this.user.id ) this.isSub = true; break
+        if ( sub.id === this.user.id ) this.isSub = true;
       }
     } )
   }
@@ -54,12 +54,12 @@ export class ClubComponent implements OnInit {
       console.log( 'Error: ' + err )
     }
     console.log( response )
-    if ( response.success ) this.router.navigate( [ '/home' ] )
+    if ( response.success ) window.location.href = '/club_lectura/' + this.bookClub.id
   }
 
   async getDataComment () {
     await this.userService.comment( this.user.id, this.bookClub.book_id, this.bookClub.id, this.comment.value )
-    this.router.navigate( [ '/perfil' ] )
+    window.location.href = '/club_lectura/' + this.bookClub.id
   }
 }
 

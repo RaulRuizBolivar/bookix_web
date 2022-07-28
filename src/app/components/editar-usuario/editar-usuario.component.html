@@ -1,0 +1,35 @@
+<div class="in">
+	<div class="card w-50 mx-auto border-0 shadow">
+		<div class="card-body p-5">
+			<figure class="w-25 mx-auto">
+				<img [src]="usuario?.image" [alt]="usuario?.name" class="rounded-circle">
+
+			</figure>
+			<h2 class="text-center mb-4">Editar usuario {{usuario?.username}}</h2>
+			<form novalidate [formGroup]="editar_usuario" (ngSubmit)="getDataForm()">
+				<div class="mb-3">
+					<label class="form-label" for="name">Nombre</label>
+					<input class="form-control" type="text" placeholder="Nombre completo" formControlName="name">
+				</div>
+				<div class="mb-3">
+					<label class="form-label" for="username">Usuario</label>
+					<input class="form-control" type="text" placeholder="Nombre de usuario" formControlName="username">
+				</div>
+				<div class="mb-3">
+					<label class="form-label" for="image">Imagen de usuario</label>
+					<input class="form-control" type="text" placeholder="Url de la imagen" formControlName="image">
+				</div>
+				<div class="mb-3">
+					<label class="form-label" for="email">Email</label>
+					<input class="form-control" type="mail" placeholder="Correo electrónico" formControlName="email">
+				</div>
+				<div class="mb-3">
+					<label class="form-label" for="password">Contraseña</label>
+					<input class="form-control" type="password" placeholder="Contraseña" formControlName="password">
+				</div>
+				<input type="submit" class=" btn btn-lg btn-warning w-100 mt-4" type="submit" value="Editar"
+					[disabled]="!editar_usuario.valid">
+			</form>
+		</div>
+	</div>
+</div>

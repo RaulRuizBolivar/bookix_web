@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { BibliotecaComponent } from './components/biblioteca/biblioteca.component';
 import { ClubComponent } from './components/club/club.component';
 import { CrearClubComponent } from './components/crear-club/crear-club.component';
+import { EditarUsuarioComponent } from './components/editar-usuario/editar-usuario.component';
 import { HomeComponent } from './components/home/home.component';
 import { LibroComponent } from './components/libro/libro.component';
 import { LoginComponent } from './components/login/login.component';
@@ -20,6 +21,7 @@ const routes: Routes = [
   { path: 'libro/:book_id', component: LibroComponent, canActivate: [ LoginGuard ] },
   { path: 'biblioteca', component: BibliotecaComponent, canActivate: [ LoginGuard ] },
   { path: 'crear_club', component: CrearClubComponent, canActivate: [ LoginGuard ] },
+  { path: 'editar_usuario', component: EditarUsuarioComponent, canActivate: [ LoginGuard ] },
   { path: '**', pathMatch: 'full', redirectTo: '/home' }
 ];
 

@@ -35,7 +35,6 @@ export class RegisterComponent implements OnInit {
 
   async getDataForm () {
     const newUser = await this.userService.register( this.register.value )
-    console.log( newUser )
     if ( newUser.id ) this.router.navigate( [ '/login' ] )
   }
 
