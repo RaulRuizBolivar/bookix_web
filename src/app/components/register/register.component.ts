@@ -16,16 +16,25 @@ export class RegisterComponent implements OnInit {
   ) {
     this.register = new FormGroup( {
       name: new FormControl( '', [
-        Validators.required
+        Validators.required,
+        Validators.minLength( 3 ),
+        Validators.maxLength( 64 )
       ] ),
       username: new FormControl( '', [
-        Validators.required
+        Validators.required,
+        Validators.pattern( /(?=^.{3,20}$)^[a-zA-Z][a-zA-Z0-9]*[._-]?[a-zA-Z0-9]+$/ ),
+        Validators.minLength( 3 ),
+        Validators.maxLength( 64 )
+
       ] ),
       email: new FormControl( '', [
-        Validators.required
+        Validators.required,
+        Validators.pattern( /^[\w-.]+@([\w-]+.)+[\w-]{2,4}$/ )
       ] ),
       password: new FormControl( '', [
-        Validators.required
+        Validators.required,
+        Validators.minLength( 3 ),
+        Validators.maxLength( 100 )
       ] )
     }, [] )
   }

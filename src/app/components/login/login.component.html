@@ -14,7 +14,8 @@
 				<p [routerLink]="['/register']" type="button" class="text-danger text-center">¿No tienes cuenta?
 					Registrate
 				</p>
-				<input type="submit" class=" btn btn-lg btn-warning w-100 mt-4" type="submit" value="Iniciar sesión">
+				<input [disabled]="!login.valid" type="submit" class=" btn btn-lg btn-warning w-100 mt-4" type="submit"
+					value="Iniciar sesión">
 			</form>
 		</div>
 	</div>

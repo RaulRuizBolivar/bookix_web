@@ -30,7 +30,8 @@
 						<option *ngFor="let book of arrBooks" [value]="book.id">{{book.title}}</option>
 					</select>
 				</div>
-				<input type="submit" class=" btn btn-lg btn-warning w-100 mt-4" type="submit" value="Crear">
+				<input [disabled]="!crearClub.valid" type="submit" class=" btn btn-lg btn-warning w-100 mt-4"
+					type="submit" value="Crear">
 			</form>
 		</div>
 	</div>

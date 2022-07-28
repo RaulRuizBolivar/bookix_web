@@ -20,19 +20,28 @@ export class EditarUsuarioComponent implements OnInit {
       .catch( err => console.log( err ) )
     this.editar_usuario = new FormGroup( {
       email: new FormControl( '', [
-        Validators.required
+        Validators.required,
+        Validators.pattern( /^[\w-.]+@([\w-]+.)+[\w-]{2,4}$/ )
       ] ),
       name: new FormControl( '', [
-        Validators.required
+        Validators.required,
+        Validators.minLength( 3 ),
+        Validators.maxLength( 64 )
       ] ),
       username: new FormControl( '', [
-        Validators.required
+        Validators.required,
+        Validators.pattern( /(?=^.{3,20}$)^[a-zA-Z][a-zA-Z0-9]*[._-]?[a-zA-Z0-9]+$/ ),
+        Validators.minLength( 3 ),
+        Validators.maxLength( 64 )
       ] ),
       image: new FormControl( '', [
-        Validators.required
+        Validators.required,
+        Validators.pattern( /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()!@:%_\+.~#?&\/\/=]*)/ )
       ] ),
       password: new FormControl( '', [
-        Validators.required
+        Validators.required,
+        Validators.minLength( 3 ),
+        Validators.maxLength( 100 )
       ] )
     }, [] )
   }
