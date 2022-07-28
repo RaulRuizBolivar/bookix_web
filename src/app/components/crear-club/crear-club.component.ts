@@ -22,18 +22,18 @@ export class CrearClubComponent implements OnInit {
   ) {
     this.crearClub = new FormGroup( {
       name: new FormControl( '', [
-        Validators.required
+        Validators.required,
+        Validators.minLength( 3 ),
+        Validators.maxLength( 64 )
       ] ),
       image: new FormControl( '', [
-        Validators.required
+        Validators.required,
+        Validators.pattern( /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()!@:%_\+.~#?&\/\/=]*)/ )
       ] ),
       num_pages: new FormControl( '', [
         Validators.required
       ] ),
       genre_id: new FormControl( '', [
-        Validators.required
-      ] ),
-      phase: new FormControl( '', [
         Validators.required
       ] ),
       book_id: new FormControl( '', [
