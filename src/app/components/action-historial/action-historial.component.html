@@ -1,24 +1,25 @@
 <div class="row">
-	<div class="col-3 px-5 py-3">
+	<div class="col-5 col-md-3 px-5 py-3">
 		<div class="row">
 			<img [src]="action.image" [alt]="action.username" class=" mt-4 img-fluid rounded-circle">
-			<h5 class="text-center mt-3">{{action.username}}</h5>
-			<p class="text-center mt-3">{{action.name}}</p>
+			<h5 class="text-center mt-3 d-none d-md-block">{{action.username}}</h5>
+			<p class="text-center mt-3 d-none d-md-block">{{action.name}}</p>
 		</div>
 	</div>
-	<div class="col-1 d-flex align-items-center justify-content-center">
+	<div class="col-1 col- d-flex align-items-center justify-content-center">
 		<p class="text-center" [innerText]="(action.action ==='vote')?'Votó':'Leyó'"></p>
 	</div>
-	<div class="col-8 bg-dark rounded p-3 ps-5">
+	<div class="col-6 col-md-8 bg-dark rounded p-3 ps-5">
 		<div class="row" type="button" [routerLink]="['/libro/' + action.book_id]">
-			<div class="col-4">
+			<div class="col-8 mx-auto col-md-4">
 				<img [src]="action.front_page" [alt]="action.username" class="rounded ">
 			</div>
-			<div class="col-8">
+			<div class="col-12 col-md-8 d-none d-md-block">
 				<h2>{{action.title}}</h2>
 				<p>{{action.author}}</p>
 				<p>{{action.num_pages}}</p>
-				<p>{{action.synopsis | recortarString: 30:'...'}}</p>
+				<p class="d-none d-lg-block">{{action.synopsis | recortarString: 50:'...'}}</p>
+				<p class="d-none d-md-block d-lg-none">{{action.synopsis | recortarString: 50:'...'}}</p>
 			</div>
 		</div>
 	</div>

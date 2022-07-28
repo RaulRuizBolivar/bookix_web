@@ -22,7 +22,8 @@
 				semana':(bookClub?.phase === 'comment')?
 				'Comentando':'Votando'}}</h5>
 		</article>
-		<article class="col" *ngIf="bookClub?.phase !== 'vote'">
+		<article type="button" class="col" *ngIf="bookClub?.phase !== 'vote'"
+			[routerLink]="['/libro/' + bookClub?.book_id]">
 			<h3 class="text-center">Libro actual:</h3>
 			<h5 class="text-center">{{bookClub?.book}}</h5>
 		</article>
