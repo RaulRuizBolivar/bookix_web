@@ -1,12 +1,12 @@
 img{
-	display: block;
-	width: 100%;
-	height: auto;
+	object-fit: cover;
+	object-position: center;
 }
 .hero{
 	height:fit-content;
 	position: relative;
 	overflow: hidden;
+	max-height: 60vh;
 }
 .gradient{
 	background: linear-gradient(0deg, rgba(0,0,0,.7) 0%, rgba(0, 0, 0, 0) 45%);

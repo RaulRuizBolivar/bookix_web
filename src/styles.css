@@ -9,4 +9,5 @@ img{
 }
 .card{
 	background-color: #181818 !important;
+	max-width: 500px;
 }
